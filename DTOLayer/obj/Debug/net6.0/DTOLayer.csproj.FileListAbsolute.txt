@@ -1,0 +1,15 @@
+C:\Users\Hakan\source\repos\DTOLayer\bin\Debug\net6.0\DTOLayer.deps.json
+C:\Users\Hakan\source\repos\DTOLayer\bin\Debug\net6.0\DTOLayer.dll
+C:\Users\Hakan\source\repos\DTOLayer\bin\Debug\net6.0\DTOLayer.pdb
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\DTOLayer.csproj.AssemblyReference.cache
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\DTOLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\DTOLayer.AssemblyInfoInputs.cache
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\DTOLayer.AssemblyInfo.cs
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\DTOLayer.csproj.CoreCompileInputs.cache
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\DTOLayer.dll
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\refint\DTOLayer.dll
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\DTOLayer.pdb
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\ref\DTOLayer.dll
+C:\Users\Hakan\source\repos\DTOLayer\bin\Debug\net6.0\Entities.dll
+C:\Users\Hakan\source\repos\DTOLayer\bin\Debug\net6.0\Entities.pdb
+C:\Users\Hakan\source\repos\DTOLayer\obj\Debug\net6.0\DTOLayer.csproj.CopyComplete
