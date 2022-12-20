@@ -1,0 +1,49 @@
+﻿@using Entities
+@model List
+<head>
+    <link href="~/table/style.css" rel="stylesheet" />
+    <link href="~/form/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center"><h2>Liste Güncelle</h2></div>
+
+    <table id="category">
+        <thead>
+            <tr>
+                <th>Liste No</th>
+                <th>Liste Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ListId</td>
+                <td>@Model.ListName</td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post">
+
+
+
+        <label style="color:darkslategrey ;font-weight: 700;"
+               for="ListId">Liste No</label>
+        <input type="text" style="margin-left:45px" asp-for="ListId" readonly /><br />
+        <label style="color:darkslategrey ;font-weight: 700;"
+               for="ListId">Yeni Liste Adı</label> &nbsp;
+        <input type="text" asp-for="ListName" placeholder="Yeni Liste Adı" />
+        <span asp-validation-for="ListName"></span>@if (TempData["Error"] is not null)
+        {
+            <div class="alert alert-warning" role="alert">
+                @TempData["Error"]
+            </div>
+        }
+
+        <input type="submit" asp-area="" asp-action="UpdateList" asp-controller="Home" class="btn1" style="margin:8px 10px" value="Güncelle" />
+    </form>
+
+</body>
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+    }

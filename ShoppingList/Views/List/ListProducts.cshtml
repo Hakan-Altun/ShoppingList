@@ -1,0 +1,53 @@
+﻿@using Entities
+@model List<Product>
+<head>
+    <link href="~/table/style.css" rel="stylesheet" />
+    <link href="~/form/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center"><h2>Listemdekiler</h2></div>
+
+    <table id="category">
+        <thead>
+            <tr>
+            
+                <th>Ürün Adı</th>
+                <th>Ürün Görseli</th>
+                <th>Ürün Detayları</th>
+                <th>Ürünü Sil</th>
+                <th>Ürün Detayı</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.ProductImage</td>
+                <td><a asp-area="" asp-controller="ProductDetail" asp-action="AddProductDetail"asp-route-id="@item.ProductId">
+                    <button class="btn1">Ürün Detayı Ekle</button>
+                </a></td>
+                <td><a asp-area="" asp-controller="Home" asp-action="DeleteFromList"asp-route-id="@item.ProductId">
+                    <button class="btn2">Ürünü Sil</button>
+                </a></td>
+                    <td>
+                        <a asp-area="" asp-controller="ProductDetail" asp-action="ProductDetails" asp-route-id="@item.ProductId">
+                            <br> @if (TempData["Error2"] is not null)
+                            {
+                                <div class="alert alert-warning" role="alert">
+                                    @TempData["Error2"]
+                                </div>
+                            }
+                    <button class="btn2">Ürün Detayları</button></a></td>
+            </tr>
+            }   
+            
+        </tbody>
+    </table>
+   
+</body>
+@section Scripts
+    {
+        <partial name="_ValidationScriptsPartial" />
+    }

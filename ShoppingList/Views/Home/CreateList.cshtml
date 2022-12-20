@@ -1,0 +1,30 @@
+﻿@using Entities
+@model List
+<head>
+    <link href="~/form/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="div2" align="center"><h2>Yeni Liste Oluştur</h2></div>
+
+
+    <div id="div2">
+        <form method="post"action="CreateList">
+            
+            <label style="color:darkslategrey ;font-weight: 700;"
+                   for="ListName">Liste Adı</label>
+            <input type="text" asp-for="ListName" placeholder="Liste Adı" style="margin-left:37px"><span asp-validation-for="ListName"></span>
+            @if (ViewBag.Error is not null)
+            {
+                <div class="alert alert-warning" role="alert">
+                    @ViewBag.Error
+                </div>
+            }<br />
+
+            <input type="submit" style="margin-left:108px" value="Kaydet">
+        </form>
+    </div>
+</body>
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,11 @@
+﻿@using Entities
+@model List<List>
+<form method="post">
+    <select name="listName">
+        @foreach(List item in Model)
+        {
+            <option>@item.ListName</option>
+        }
+    </select>
+    <input type="submit" name="ListId" />
+</form>

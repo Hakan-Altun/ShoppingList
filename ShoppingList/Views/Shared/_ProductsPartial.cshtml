@@ -1,0 +1,36 @@
+﻿@using Entities
+@model List<Product>
+
+<head>
+    <link href="~/table/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center"><h2>Kategoriler</h2></div>
+
+    <table id="category">
+        <thead>
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Ürün Görseli</th>
+                <th>Ürünü Listeye Ekle</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (Product item in Model)
+            {
+                <tr>
+                    <td>@item.ProductName</td>
+                    <td>@item.ProductImage</td>
+                    <td><a asp-area=""asp-controller="List"asp-action="AddProductToList" asp-route-id="@item.ProductId"><button class="btn1">Ürünü Listeye Ekle</button></a></td>
+
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+</body>

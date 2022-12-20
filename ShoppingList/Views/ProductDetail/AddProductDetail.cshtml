@@ -1,0 +1,34 @@
+﻿@using Entities
+@model ProductDetail
+<head>
+    <link href="~/form/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="div2" align="center"><h2>Detay Ekle</h2></div>
+
+
+    <div id="div2">
+        <form method="post">
+            <label style="color:darkslategrey ;font-weight: 700;"
+                   for="ProductName">@Model.ProductName</label> 
+            <input type="text" asp-for="ProductName" readonly><br />
+            <label style="color:darkslategrey ;font-weight: 700;"
+                   for="Brand">Marka</label> &nbsp;
+            <input type="text" asp-for="Brand" placeholder="Marka"><span asp-validation-for="Brand"></span>
+            @if (ViewBag.Error is not null)
+            {
+                <div class="alert alert-warning" role="alert">
+                    @ViewBag.Error
+                </div>
+            }<br />
+            <label style="color:darkslategrey ;font-weight: 700;"
+                   for="Quantity">Miktar</label> &nbsp;
+            <input type="text" asp-for="Quantity" placeholder="Miktar"><span asp-validation-for="Quantity"></span><br />
+            <input type="submit" style="margin-left:108px" value="Kaydet">
+        </form>
+    </div>
+</body>
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+}

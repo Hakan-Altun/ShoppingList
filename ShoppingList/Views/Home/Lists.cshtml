@@ -1,0 +1,42 @@
+﻿@using Entities
+
+@model List<List>
+
+<head>
+    <link href="~/table/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center"><h2>Listelerim</h2></div>
+
+    <table id="category">
+        <thead>
+            <tr>
+                <th>Liste No</th>
+                <th>Liste Adı</th>
+                <th>Liste Güncelle</th>
+                <th>Liste Sil</th>
+                <th>Listeye Ürün Ekle</th>
+                <th>Listeyi Görüntüle</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (List item in Model)
+            {
+                <tr>
+                    <td>@item.ListId</td>
+                    <td>@item.ListName</td>
+                    <td><a asp-area="" asp-controller="Home" asp-action="GetList" asp-route-id="@item.ListId"><button class="btn1">Güncelle</button></a></td>
+                    <td><a  asp-area="" asp-controller="Home" asp-action="DeleteList" asp-route-id="@item.ListId"><button class="btn2">Sil</button></a></td>
+                    <td><a asp-area="" asp-controller="Home" asp-action="Products" asp-route-id="@item.ListId"><button class="btn3">Listeye ürün ekle</button></a></td>
+                    <td><a asp-area="" asp-controller="List" asp-action="ListProducts" asp-route-id="@item.ListId"><button class="btn1">Görüntüle</button></a></td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+</body>
