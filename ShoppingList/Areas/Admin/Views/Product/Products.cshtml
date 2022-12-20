@@ -1,0 +1,41 @@
+﻿@using DTOLayer.DTOs.ProductDTOs
+@model ICollection<DTOLayer.DTOs.ProductDTOs.ProductRequestDTO>
+
+<head>
+    <link href="~/table/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center"><h2>Kategoriler</h2></div>
+
+    <table id="category">
+        <thead>
+            <tr>
+                <th>Ürün No</th>
+                <th>Kategori Adı</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Görseli</th>
+                <th>Ürün Güncelle</th>
+                <th>Ürün Sil</th>
+            </tr>
+        </thead>
+
+
+        <tbody>
+            @foreach (ProductRequestDTO item in Model)
+            {
+                <tr>
+                    <td>@item.ProductId</td>
+                    <td>@item.CategoryName</td>
+                    <td>@item.ProductName</td>
+                    <td><img src="~/ProductImages/@item.ProductImage" /></td>
+                    <td><a asp-area="Admin" asp-controller="Product" asp-action="GetProduct" asp-route-id="@item.ProductId"><button class="btn1">Güncelle</button></a></td>
+                    <td><a a asp-area="Admin" asp-controller="Product" asp-action="DeleteProduct" asp-route-id="@item.ProductId"><button class="btn2">Sil</button></a></td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+</body>

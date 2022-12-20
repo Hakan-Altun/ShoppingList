@@ -1,0 +1,27 @@
+﻿
+@model Category
+<head>
+    <link href="~/form/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="div2" align="center"><h2>Kategori Ekle</h2></div>
+  
+
+    <div id="div2">
+        <form method="post">
+            <label style="color:darkslategrey ;font-weight: 700;"
+                   for="CategoryName">Kategori Adı</label> &nbsp;
+            <input type="text" asp-for="CategoryName" placeholder="Kategori Adı"><span asp-validation-for="CategoryName"></span>
+            @if (ViewBag.Error is not null)
+            {
+                <div class="alert alert-warning" role="alert">
+                    @ViewBag.Error
+            </div>}<br />
+            <input type="submit" style="margin-left:108px" value="Kaydet">
+        </form>
+    </div>
+</body>
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial"/>
+}

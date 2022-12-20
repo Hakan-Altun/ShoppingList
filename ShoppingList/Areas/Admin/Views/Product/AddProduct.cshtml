@@ -1,0 +1,34 @@
+﻿@model Product
+<head>
+    <link href="~/form/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="div2" align="center"><h2>Ürün Ekle</h2></div>
+
+
+    <div id="div2">
+        <form method="post" enctype="multipart/form-data">
+            <label style="color:darkslategrey ;font-weight: 700;"
+                   for="CategoryName">Kategori</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           @await Component.InvokeAsync("CategoryList")
+             <br />
+            <label style="color:darkslategrey ;font-weight: 700;"
+                   for="CategoryName">Ürün Adı</label>
+            <input type="text" asp-for="ProductName" placeholder="Ürün Adı"style="margin-left:37px"><span asp-validation-for="ProductName"></span>
+            @if (ViewBag.Error is not null)
+            {
+                <div class="alert alert-warning" role="alert">
+                    @ViewBag.Error
+                </div>
+            }<br />
+            <label style="color:darkslategrey ;font-weight: 700;"
+                   for="ImageFile">Ürün Görseli</label>
+            <input asp-for="ImageFile" accept="image/*" />
+            <input type="submit" style="margin-left:108px" value="Kaydet">
+        </form>
+    </div>
+</body>
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+}

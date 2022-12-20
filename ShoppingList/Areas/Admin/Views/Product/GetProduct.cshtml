@@ -1,0 +1,69 @@
+﻿@using DTOLayer.DTOs.ProductDTOs
+@model ProductRequestDTO
+<head>
+    <link href="~/table/style.css" rel="stylesheet" />
+    <link href="~/form/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center"><h2>Ürün Güncelle</h2></div>
+
+    <table id="category">
+        <thead>
+            <tr>
+                <th>Ürün No</th>
+                <th>Kategori Adı</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Görseli</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.ProductId</td>
+                <td>@Model.CategoryName</td>
+                <td>@Model.ProductName</td>
+                <td><img src="~/ProductImages/@Model.ProductImage" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post">
+
+
+
+        <label style="color:darkslategrey ;font-weight: 700;"
+               for="ProductId">Ürün No</label>
+        <input type="text" style="margin-left:75px" asp-for="ProductId" readonly /><br />
+        <label style="color:darkslategrey ;font-weight: 700;"
+               for="CategoryName">Kategori</label>
+        
+            <select name="CategoryName" style="margin-left:73px">
+                @foreach(var item in Model.CategoryNames){
+                    <option>
+                        @item.CategoryName
+                    </option>
+                }
+            </select>
+       
+        <span asp-validation-for="CategoryName"></span>@if (TempData["Error"] is not null)
+        {
+            <div class="alert alert-warning" role="alert">
+                @TempData["Error"]
+            </div>
+        }<br />
+        <label style="color:darkslategrey ;font-weight: 700;"
+               for="ProductName">Ürün Adı</label>
+        <input type="text" asp-for="ProductName" style="margin-left:70px"placeholder="Yeni Ürün Adı" />
+        <span asp-validation-for="ProductName"></span>
+        <br />
+        <label style="color:darkslategrey ;font-weight: 700;"
+               for="ProductName">Ürün Görseli</label>
+        <input type="file" asp-for="ProductImage" />
+        <br />
+        <input type="submit" asp-area="Admin" asp-action="UpdateProduct" asp-controller="Product" class="btn1" style="margin:8px 140px" value="Güncelle" />
+    </form>
+
+</body>
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+    }

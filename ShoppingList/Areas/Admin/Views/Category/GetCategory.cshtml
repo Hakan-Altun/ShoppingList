@@ -1,0 +1,49 @@
+﻿
+@model Category
+<head>
+    <link href="~/table/style.css" rel="stylesheet" />
+    <link href="~/form/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div align="center"><h2>Kategori Güncelle</h2></div>
+
+    <table id="category">
+        <thead>
+            <tr>
+                <th>Kategori No</th>
+                <th>Kategori Adı</th>
+            </tr>
+        </thead>
+        <tbody>
+           <tr>
+              <td>@Model.CategoryId</td>
+              <td>@Model.CategoryName</td>
+           </tr>
+        </tbody>
+    </table>
+    <form method="post">
+      
+       
+       
+        <label style="color:darkslategrey ;font-weight: 700;"
+               for="CategoryId">Kategori No</label>
+        <input type="text" style="margin-left:45px" asp-for="CategoryId" readonly/><br />
+        <label style="color:darkslategrey ;font-weight: 700;"
+               for="CategoryName">Yeni Kategori Adı</label> &nbsp;
+        <input type="text" asp-for="CategoryName" placeholder="Yeni Kategori Adı" />
+        <span asp-validation-for="CategoryName"></span>@if (TempData["Error"] is not null)
+        {
+            <div class="alert alert-warning" role="alert">
+                @TempData["Error"]
+            </div>
+        }
+    
+        <input type="submit" asp-area="Admin" asp-action="UpdateCategory" asp-controller="Category" class="btn1" style="margin:8px 10px"value="Güncelle" />
+    </form>
+   
+</body>
+@section Scripts
+    {
+    <partial name="_ValidationScriptsPartial" />
+    }
