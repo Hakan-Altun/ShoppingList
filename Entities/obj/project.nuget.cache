@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "r8tZ8oAbGuIjrPuqAEZ2dlDi56M889YbCUz80Apvv+0tHit8cH0Yz7MukfRHV4ON/yFGfI7YzkHcuDBxO0w/zA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Hakan\\source\\repos\\Entities\\Entities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Hakan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\Hakan\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
